@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>나의 홈페이지</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+      }
+      nav {
+        flex: 1;
+        vertical-align: top;
+        border: 1px solid green;
+        padding: 10px;
+      }
+      nav ul {
+        list-style: none;
+      }
+      nav li {
+        border-bottom: 1px solid red;
+        padding: 10px;
+        /* box-shadow offset-x,offset-y blur 색상 */
+        /* inset 은 그림자를 box 안쪽으로 들어가게 */
+        transition: ease-out 0.4s;
+        box-shadow: inset 0 0 0 #e80286;
+      }
+      nav li:hover {
+        box-shadow: inset 400px 100px 0 #e80286;
+        cursor: pointer;
+      }
+
+      section {
+        flex: 6;
+        padding: 10px;
+        border: 1px solid blue;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li>home</li>
+        <li>회사소개</li>
+        <li>공지사항</li>
+        <li>자유게시판</li>
+      </ul>
+    </nav>
+    <section>
+      <article>
+        국무총리는 국무위원의 해임을 대통령에게 건의할 수 있다. 대통령은 국회에
+        출석하여 발언하거나 서한으로 의견을 표시할 수 있다. 대통령의 선거에 관한
+        사항은 법률로 정한다. 모든 국민은 언론·출판의 자유와 집회·결사의 자유를
+        가진다. 국토와 자원은 국가의 보호를 받으며, 국가는 그 균형있는 개발과
+        이용을 위하여 필요한 계획을 수립한다.
+      </article>
+      <article>
+        대법관은 대법원장의 제청으로 국회의 동의를 얻어 대통령이 임명한다.
+        국가는 법률이 정하는 바에 의하여 재외국민을 보호할 의무를 진다. 이
+        헌법에 의한 최초의 대통령의 임기는 이 헌법시행일로부터 개시한다.
+        국민경제자문회의의 조직·직무범위 기타 필요한 사항은 법률로 정한다.
+        국민경제의 발전을 위한 중요정책의 수립에 관하여 대통령의 자문에 응하기
+        위하여 국민경제자문회의를 둘 수 있다.
+      </article>
+      <article>
+        헌법개정안이 제2항의 찬성을 얻은 때에는 헌법개정은 확정되며, 대통령은
+        즉시 이를 공포하여야 한다. 대한민국의 경제질서는 개인과 기업의 경제상의
+        자유와 창의를 존중함을 기본으로 한다. 대통령의 국법상 행위는 문서로써
+        하며, 이 문서에는 국무총리와 관계 국무위원이 부서한다. 군사에 관한 것도
+        또한 같다.
+      </article>
+    </section>
+  </body>
+</html>
