@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>나의 홈페이지</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html,
+      body {
+        width: 100vw;
+        height: 100vh;
+      }
+      /*
+body 의 display 를 flex 지정하고
+flex-direction 을 column 으로 지정하면
+위에서 아랫방향으로 흐르는 layput 이 된다
+*/
+      body {
+        display: flex;
+        flex-direction: column;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        background-color: black;
+        color: white;
+      }
+      /*
+      em 단위와 rem 단위
+      주변의 있는 text의 font-size 를 기준으로 설정하는 단위
+      주변의 있는 text 의 font-size 를 1(rem,em) 로 보고 그에 비례하여 단위로 설정한다.
+      */
+      header {
+        padding: 2rem;
+        text-align: center;
+      }
+      /*
+      border-bottom 에 투명색으로 라인을 만들고
+      hover 가 되었을때 원하는 색으로 다시 라인을 색칠한다.
+      */
+      nav li {
+        padding: 12px 16px;
+        border-bottom: 3px solid transparent;
+        transition: border 0.5s ease-out;
+      }
+
+      nav li:nth-child(4) {
+        margin-left: auto;
+      }
+
+      nav li:hover {
+        border-bottom: 3px solid yellow;
+        cursor: pointer;
+      }
+      section {
+        flex: 1;
+        border: 1px solid blue;
+      }
+
+      footer {
+        background-color: black;
+        color: white;
+        text-align: center;
+        padding: 0.9rem;
+      }
+      nav li:nth-of-type(2) ul {
+        position: relative;
+      }
+      /*
+      학생정보 li tag의 position 을 relative 으로 설정하고
+      학생정보의 sub ul tag 의 postion 을 absolute 로 설정하면
+      absolute 로 설정한 tag 의 위피를 relative 속 tag 와 연관하여 위치를 설정할수 있다
+      */
+      nav li:nth-of-type(2) ul {
+        position: absolute;
+        flex-direction: column;
+        opacity: 0;
+        left: 0;
+        padding: 0;
+        margin: 0;
+        width: 180px;
+        transition: 0.5s;
+      }
+
+      nav li:nth-of-type(2):hover ul {
+        opacity: 1;
+      }
+
+      nav li:nth-of-type(2) ul li {
+        position: static;
+        height: 30;
+        line-height: 20;
+        padding: 5px0;
+      }
+
+      /*학생정보의 sub menu*/
+      nav li:nth-of-type(2):hover ul li {
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>반갑습니다</h1>
+    </header>
+    <nav>
+      <ul>
+        <li>Home</li>
+        <li>
+          학생정보
+          <ul>
+            <li>학생리스트</li>
+            <li>학생검색</li>
+          </ul>
+        </li>
+        <li>성적정보</li>
+        <li>로그인</li>
+        <li>회원가입</li>
+      </ul>
+    </nav>
+    <section></section>
+    <footer>
+      <address>CopyRight &copy; sk12392@naver.com</address>
+    </footer>
+  </body>
+</html>
