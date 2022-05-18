@@ -145,6 +145,26 @@
           // 생성된 span tag 를 div.badge tag에 child 로 추가하라
           divBadge.appendChild(span);
         }
+
+        let count = 0;
+        const interval_cb = (e) => {
+          badge_cilck_cb(e, ++count % imgCount);
+          if (count > imgCount * 100) count = 0;
+        };
+        //2초 마다 슬라이딩이 되도록 설정
+        let interval = setInterval(interval_cb, 2000);
+        //div.image_window 에 마수스가 over 되면 interval 취소
+        // div.image_window 에 마수스가 out 되면 다시시작
+        const image_window = document.querySelector("div.image_window");
+        if (image_window) {
+          // 마우스가 이미지에 올라가면 interval 취소
+          image_window.addEventListener("mouseover", () => {
+            clearInterval(interval);
+          });
+          image_window.addEventListener("mouseout", () => {
+            interval = setInterval(interval_cb, 2000);
+          });
+        }
       }); // docyment.addEvent("DOMContentLoaded")
     </script>
   </head>
